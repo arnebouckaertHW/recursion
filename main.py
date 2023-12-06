@@ -19,3 +19,14 @@ print()
 print("Power of 2 to the 5th power using recursion is:", recursion.power(2, 5))
 print("Power of 2 to the 4th power using recursion is:", recursion.power(2, 4))
 print("Power of 2 to the 0 power using recursion is:", recursion.power(2, 0))
+print()
+
+nums = [5,12,3,4]
+print("Minimum number using a loop is:", loops.computeMin(nums))
+print("Minimum number using recursion is:", recursion.computeMin(nums, 0, nums[0]))
+print()
+
+s = "CAT"
+loops.reverse(s)
+recursion.reverse(s, len(s))
+print()
