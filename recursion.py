@@ -17,7 +17,6 @@ class recursion:
             # this is the general rule that includes the recursive call
             return n * recursion.factorial(n - 1)
         
-
     @staticmethod
     def power(number: int, power: int):
         """Computes the power of a specified number.
@@ -75,3 +74,31 @@ class recursion:
             # this is the general rule that includes the recursive call
             print(s[i - 1], end = "")
             recursion.reverse(s, i - 1)
+
+    @staticmethod
+    def search(a, first: int, size: int, target, i: int, found: bool):
+        """Searches for a desired element in a list of elements starting at a[first].
+
+        Args:
+            a: the list to search
+            first (int): the list index at which the search will start
+            size (int): the number of elements to search
+            target: the element to search for
+            i: the counter variable used to iterate through list
+            found: the variable used to denote if the target has been found
+        Returns:
+            int: If target appears in the list, index of the element
+            that contains the target, else -1.
+        """
+
+        # this is the stopping case
+        if i == size or found or (i + first >= len(a)):
+            if found:
+                return first + i - 1
+            else:
+                return -1
+        else:
+            # this is the general rule that includes the recursive call
+            if a[first + i] == target:
+                found = True
+            return recursion.search(a, first, size, target, i + 1, found)
